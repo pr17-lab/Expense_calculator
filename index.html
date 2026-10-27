@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,29 +6,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expense Tracker</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 
 <body class="bg-light">
 
     <div class="container mt-5 mb-5">
         <h2 class="text-center mb-4">Expense Tracker</h2>
-        <div class="card mb-4">
-            <div class="card-body text-center">
-                <h5>Total Expenses</h5>
-                <h3 id="totalExpenses" class="text-success">₹0.00</h3>
+
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body text-center">
+
+                        <h6>
+                            <i class="fa-solid fa-wallet text-primary"></i>
+                            Total Expenses
+                        </h6>
+
+                        <h3 id="totalExpenses" class="text-success">
+                            0.00
+                        </h3>
+
+                    </div>
+                </div>
             </div>
+
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h6>
+                            <i class="fa-solid fa-receipt text-primary"></i>
+                            Total Transactions
+                        </h6>
+
+                        <h3 id="totalTransactions" class="text-success">
+                            0
+                        </h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body text-center">
+
+                        <h6>
+                            <i class="fa-solid fa-chart-line text-primary"></i>
+                            Average Expenditure
+                        </h6>
+
+                        <h3 id="averageExpense" class="text-success">
+                            ₹0.00
+                        </h3>
+
+                    </div>
+                </div>
+            </div>
+
         </div>
 
         <div class="card mb-4">
+
             <div class="card-header fw-bold">
                 Add Expense
             </div>
+
             <div class="card-body">
+
                 <form id="expenseForm">
                     <div class="row">
-
                         <div class="col-md-6 mb-3">
+
                             <label for="category" class="form-label">
                                 Category
                             </label>
@@ -41,43 +94,63 @@
                                 <option value="Entertainment">Entertainment</option>
                                 <option value="Other">Other</option>
                             </select>
+
                         </div>
 
                         <div class="col-md-6 mb-3">
+
                             <label for="amount" class="form-label">
-                                Amount (₹)
+                                Amount
                             </label>
 
-                            <input type="number" id="amount" class="form-control" placeholder="Enter amount" min="0.01"
-                                step="0.01" required>
-                        </div>
+                            <input type="number"
+                                id="amount"
+                                class="form-control"
+                                placeholder="Enter amount"
+                                min="0.01"
+                                step="0.01"
+                                required>
 
+                        </div>
+   
                         <div class="col-md-6 mb-3">
+
                             <label for="date" class="form-label">
                                 Date
                             </label>
 
-                            <input type="date" id="date" class="form-control" required>
+                            <input type="date"
+                                id="date"
+                                class="form-control"
+                                required>
+
                         </div>
                         <div class="col-md-6 mb-3 d-flex align-items-end">
-                            <button type="submit" id="addBtn" class="btn btn-primary">
+
+                            <button type="submit"
+                                id="addBtn"
+                                class="btn btn-primary me-2">
                                 Add Expense
                             </button>
+
+                            <button type="button"
+                                id="cancelBtn"
+                                class="btn btn-secondary d-none">
+                                Cancel Edit
+                            </button>
+
                         </div>
 
                     </div>
 
-                    <button type="button" id="cancelBtn" class="btn btn-secondary d-none">
-                        Cancel Edit
-                    </button>
-
                 </form>
+
             </div>
+
         </div>
 
-
-        <div class=" mb-3">
-
+        
+        <div class="mb-3">
             <select id="filterCategory" class="form-select">
                 <option value="">All Categories</option>
                 <option value="Food">Food</option>
@@ -91,7 +164,6 @@
         </div>
 
         <div class="table-responsive">
-
             <table class="table table-bordered table-striped align-middle">
                 <thead class="table-dark">
                     <tr>
@@ -102,15 +174,18 @@
                         <th>Actions</th>
                     </tr>
                 </thead>
+
                 <tbody id="expenseDetails">
                 </tbody>
+
             </table>
 
         </div>
 
     </div>
 
+    <script src="script.js"></script>
+
 </body>
-<script src="script.js"></script>
 
 </html>
